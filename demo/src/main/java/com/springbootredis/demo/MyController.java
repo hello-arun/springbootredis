@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class MyController {
     @GetMapping("/hello")
-    public String hello() {
-        return "Tata GoodBye See You gaya!!";
+    public String getUser(@RequestParam(defaultValue = "Guest") String name, @RequestParam(defaultValue = "0") int age) {
+    return "Hello, " + name + "! You are " + age + " years old.";
     }
     
     @GetMapping("/bye")
